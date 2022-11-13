@@ -29,7 +29,7 @@ FullName?STRING:Mark Mjaucher
 Login?NOTHING:%NIL%
 Age?NUMBER:26
 PhoneNumbers?LIST:+355-69-123-4567|+355-69-711-0711
-Private?BOOLEAN:True
+IsPrivate?BOOLEAN:True
 <-
 ```
 
@@ -74,7 +74,7 @@ WPTXT:ADD("Account", "Age", 26) --NUMBER
 
 WPTXT:ADD("Account", "PhoneNumbers", { "+355-69-123-4567", "+355-69-711-0711" }) --LIST
 
-WPTXT:ADD("Account", "Private", false) --BOOLEAN
+WPTXT:ADD("Account", "IsPrivate", false) --BOOLEAN
 ```
 
 ### 2.3 GET()
@@ -83,7 +83,7 @@ Function `GET()` gives `Value`:
 
 ```lua
 local FullName = WPTXT:GET("Account", "FullName")
-local PhoneNumbers = WPTXT:GET("Account", "FullName")
+local PhoneNumbers = WPTXT:GET("Account", "PhoneNumbers")
 
 print(FullName)
 
@@ -101,18 +101,16 @@ end
 Function `SET()` changes `Value`:
 
 ```lua
-local FullName = WPTXT:GET("Account", "FullName")
-local PhoneNumbers = WPTXT:GET("Account", "FullName")
+local IsPrivate = WPTXT:GET("Account", "Login")
 
-print(FullName)
+print(IsPrivate)
 
-for ind, pnumber in ipairs() do
-   print(pnumber)
-end
+WPTXT:SET("Account", "Login", false)
 
-> Mark Mjaucher
-> +355-69-123-4567
-> +355-69-711-0711
+print(IsPrivate)
+
+> %NIL%
+> false
 ```
 
 ## 3. Finishing
