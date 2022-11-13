@@ -74,7 +74,7 @@ WPTXT:ADD("Account", "Age", 26) --NUMBER
 
 WPTXT:ADD("Account", "PhoneNumbers", { "+355-69-123-4567", "+355-69-711-0711" }) --LIST
 
-WPTXT:ADD("Account", "IsPrivate", false) --BOOLEAN
+WPTXT:ADD("Account", "IsPrivate", true) --BOOLEAN
 ```
 
 ### 2.3 GET()
@@ -101,16 +101,14 @@ end
 Function `SET()` changes `Value`:
 
 ```lua
-local IsPrivate = WPTXT:GET("Account", "Login")
+print(WPTXT:GET("Account", "Login"))
 
-print(IsPrivate)
+WPTXT:SET("Account", "Login", "mjaucher")
 
-WPTXT:SET("Account", "Login", false)
-
-print(IsPrivate)
+print(WPTXT:GET("Account", "Login"))
 
 > %NIL%
-> false
+> mjaucher
 ```
 
 ## 3. Finishing
