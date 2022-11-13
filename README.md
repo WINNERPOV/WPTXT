@@ -87,7 +87,7 @@ local PhoneNumbers = WPTXT:GET("Account", "FullName")
 
 print(FullName)
 
-for ind, pnumber in ipairs() do
+for ind, pnumber in ipairs(PhoneNumbers) do
    print(pnumber)
 end
 
