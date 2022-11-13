@@ -1,8 +1,7 @@
-->TestObj
-StringValue?STRING:Hello World!
-NumberValue?NUMBER:123.45
-BooleanValue?BOOLEAN:true
-ListValue?LIST:1,2,3,4,5
-WrongValue?NOTHING:%NIL%
+->Account
+FullName?STRING:Mark Mjaucher
+Login?BOOLEAN:false
+Age?NUMBER:26
+PhoneNumbers?LIST:+355-69-123-4567|+355-69-711-0711
+IsPrivate?BOOLEAN:false
 <-
-STRING, NUMBER, BOOLEAN, LIST, NOTHING
