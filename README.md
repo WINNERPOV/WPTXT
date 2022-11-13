@@ -39,7 +39,7 @@ There can be an unlimited number of Objects in one file.
 
 ## 1. Initialization
 
-The WPTXT.lua file needs to be thrown into the project and required from it:
+The [WPTXT.lua](https://github.com/WINNERPOV/WPTXT/blob/main/WPTXT.lua) file needs to be thrown into the project and required from it:
 
 ```lua
 WPTXT = require("WPTXT")
