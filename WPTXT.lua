@@ -88,7 +88,7 @@ local function WPTXTToLua(value)
         return tonumber(value.val)
     elseif value.type == "BOOLEAN" then
         local boolean = false
-        if tostring(value.val):upper() == "true" then
+        if tostring(value.val):upper() == "TRUE" then
             boolean = true
         end
         return boolean
@@ -170,6 +170,12 @@ function WPTXT:SET(objectName, valueName, val)
     end
 end
 
+function WPTXT:END()
+
+    WPTXT.OBJECTS = {}
+    WPTXT.FILENAME = ""
+end
+
 function WPTXT:SAVE()
     local file = io.open(WPTXT.FILENAME, "w")
     local text = ""
@@ -182,8 +188,7 @@ function WPTXT:SAVE()
     end
     file:write(text)
     file:close()
-    WPTXT.OBJECTS = {}
-    WPTXT.FILENAME = ""
+    WPTXT:END()
 end
 
 return WPTXT
